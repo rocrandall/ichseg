@@ -73,6 +73,10 @@ ich_predict = function(df,
   if (shiny) {
     shiny::incProgress(message = msg)
   }
+
+  # throwed error unable to find ichseg, wondering if due to local install? ron, adding require here to force load...
+
+  require(ichseg)
   env = as.environment("package:ichseg")
 
   # Getting modlist for model and cutoff
